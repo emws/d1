@@ -3,24 +3,24 @@
     "short_name": "DotaRhythm",
     "description": "A Dota themed rhythm battle game featuring Shadow Fiend.",
     "lang": "zh-CN",
-    "start_url": "./index.html",
-    "scope": ".",
-    "display": "standalone",
-    "orientation": "landscape",
+    "start_url": "index.html",
+    "scope": "/",
+    "display": "fullscreen",
+    "orientation": "any",
     "background_color": "#05050a",
-    "theme_color": "#f1c40f",
+    "theme_color": "#05050a",
     "icons": [
         {
             "src": "sf_hero.png",
             "sizes": "192x192",
             "type": "image/png",
-            "purpose": "any maskable"
+            "purpose": "any"
         },
         {
             "src": "sf_hero.png",
             "sizes": "512x512",
             "type": "image/png",
-            "purpose": "any maskable"
+            "purpose": "any"
         }
     ]
 }
