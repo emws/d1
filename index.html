@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Shadow Fiend - Rhythm Battle</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Oswald:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="game-container">
+        <!-- 游戏顶部信息：英雄 vs 怪兽 -->
+        <div class="battle-header">
+            <div class="hero-stats">
+                <div class="name" id="hero-name">Shadow Fiend (影魔)</div>
+                <div class="hp-bar"><div id="hero-hp" class="hp-fill"></div></div>
+                <div class="mana-bar"><div id="hero-mana" class="mana-fill"></div></div>
+            </div>
+            
+            <div class="vs-badge">VS</div>
+
+            <div class="monster-stats">
+                <div class="name" id="monster-name">狗头怪 (Kobold)</div>
+                <div class="hp-bar"><div id="monster-hp" class="hp-fill"></div></div>
+                <div class="level-info">Level <span id="current-level">1</span></div>
+            </div>
+        </div>
+
+        <!-- 游戏画面区域 -->
+        <div id="canvas-wrapper">
+            <canvas id="gameCanvas"></canvas>
+            <div id="combo-display">Combo x0</div>
+            <div id="message-display">Ready?</div>
+        </div>
+
+        <!-- 核心操作区域 (类似劲舞团/音游) -->
+        <div class="input-area">
+            <div id="sequence-container">
+                <!-- 动态生成方向图标，例如: ↑ ↓ ← → -->
+            </div>
+            <div id="input-feedback"></div>
+        </div>
+
+        <!-- 底部技能栏 -->
+        <div class="skill-bar">
+            <div class="skill" id="skill-q">Z (影压-近)</div>
+            <div class="skill" id="skill-w">X (影压-中)</div>
+            <div class="skill" id="skill-e">C (影压-远)</div>
+            <div class="skill" id="skill-r">R (魂之挽歌)</div>
+        </div>
+
+        <div class="instructions">
+            使用 <strong>↑ ↓ ← →</strong> 完成连招，按 <strong>Z X C R</strong> 释放技能
+        </div>
+
+        <!-- 移动端虚拟按键 (键盘风格) -->
+        <div id="mobile-controls" class="mobile-only">
+            <div class="keyboard-row">
+                <div class="control-btn" data-key="ArrowLeft">←</div>
+                <div class="control-btn" data-key="ArrowDown">↓</div>
+                <div class="control-btn" data-key="ArrowUp">↑</div>
+                <div class="control-btn" data-key="ArrowRight">→</div>
+            </div>
+            <div class="keyboard-row">
+                <div class="control-btn skill-btn" data-key="z">Z</div>
+                <div class="control-btn skill-btn" data-key="x">X</div>
+                <div class="control-btn skill-btn" data-key="c">C</div>
+                <div class="control-btn skill-btn" data-key="r">R</div>
+            </div>
+        </div>
+
+        <!-- 游戏结束/开始弹窗 -->
+        <div id="overlay" class="hidden">
+            <div class="modal">
+                <h1 id="modal-title">选择英雄</h1>
+                <div id="hero-selection" class="hero-selection-grid">
+                    <div class="hero-card" data-hero="sf">
+                        <div class="hero-img-placeholder sf"></div>
+                        <div class="hero-name">影魔</div>
+                        <div class="hero-desc">高伤害 影压连招</div>
+                    </div>
+                    <div class="hero-card" data-hero="cm">
+                        <div class="hero-img-placeholder cm"></div>
+                        <div class="hero-name">冰女</div>
+                        <div class="hero-desc">高法力 冰霜控制</div>
+                    </div>
+                    <div class="hero-card" data-hero="sniper">
+                        <div class="hero-img-placeholder sniper"></div>
+                        <div class="hero-name">火枪</div>
+                        <div class="hero-desc">远距离 致命狙击</div>
+                    </div>
+                </div>
+                <p id="modal-content"></p>
+                <button id="restart-btn" class="hidden">重新开始</button>
+            </div>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
