@@ -1,9 +1,9 @@
-const CACHE_NAME = 'dota-rhythm-v2';
+const CACHE_NAME = 'dota-rhythm-v3';
 const ASSETS = [
     './',
-    '/index.html',
-    '/style.css',
-    '/game.js'
+    './index.html',
+    './style.css',
+    './game.js'
 ];
 
 self.addEventListener('install', (event) => {

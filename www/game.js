@@ -311,13 +311,10 @@ function init() {
             const key = btn.getAttribute('data-key');
             if (!key) return; // 过滤掉 empty 占位按钮
             
-            // 触感反馈 (手机震动)
-            if (navigator.vibrate) {
-                navigator.vibrate(20); // 短促震动 20ms
-            }
-            
             // 视觉反馈：添加瞬间的发光扩散效果
-            createRipple(e.touches[0].clientX, e.touches[0].clientY, btn.classList.contains('skill-btn') ? '#f1c40f' : '#4da6ff');
+            if (e.touches && e.touches[0]) {
+                createRipple(e.touches[0].clientX, e.touches[0].clientY, btn.classList.contains('skill-btn') ? '#f1c40f' : '#4da6ff');
+            }
 
             // 模拟键盘事件
             if (CONFIG.arrows.includes(key)) {
@@ -753,9 +750,6 @@ function gameLoop() {
         updateProjectiles();
         updateVFX();
         updateUI(); // 持续更新 UI，包括冷却显示
-        
-        // 给 Canvas 增加一点发光滤镜效果，让画面更有质感
-        elements.canvas.style.filter = "contrast(1.1) brightness(1.1)";
         
         draw();
     }
