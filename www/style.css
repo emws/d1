@@ -391,7 +391,6 @@ body {
     #game-container {
         width: 100vw;
         height: 100vh;
-        height: 100dvh; /* 支持动态视口高度 */
         padding: 5px;
         border: none;
         border-radius: 0;
