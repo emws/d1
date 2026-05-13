@@ -1,0 +1,9 @@
+{
+  "appId": "com.emws.dotarhythm",
+  "appName": "Dota Rhythm Battle",
+  "webDir": "www",
+  "bundledWebRuntime": false,
+  "server": {
+    "allowNavigation": ["*"]
+  }
+}
