@@ -861,12 +861,6 @@ function winGame() {
 // 启动
 window.onload = () => {
     init();
-    // 注册 Service Worker
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('sw.js')
-            .then(() => console.log('Service Worker Registered'))
-            .catch(err => console.log('Service Worker Failed', err));
-    }
 };
 
 // 按钮点击涟漪特效逻辑

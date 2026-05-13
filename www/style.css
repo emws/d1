@@ -32,7 +32,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #05050a;
-    font-family: 'Oswald', 'Segoe UI', sans-serif;
+    font-family: 'Segoe UI', sans-serif;
     color: #e1e1e1;
     display: flex;
     justify-content: center;
@@ -43,7 +43,7 @@ body {
 }
 
 .name {
-    font-family: 'Cinzel', serif;
+    font-family: serif;
     font-size: 18px;
     letter-spacing: 1px;
     color: #f1c40f;
