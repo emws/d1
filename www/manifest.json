@@ -1,14 +1,15 @@
 {
     "name": "Dota Rhythm Battle",
     "short_name": "DotaRhythm",
-    "description": "A Dota themed rhythm battle game featuring Shadow Fiend.",
+    "description": "A Dota themed rhythm battle game featuring Shadow Fiend, Crystal Maiden and Sniper.",
     "lang": "zh-CN",
-    "start_url": "/index.html",
-    "scope": "/",
-    "display": "fullscreen",
-    "orientation": "any",
+    "start_url": "index.html",
+    "scope": ".",
+    "display": "standalone",
+    "orientation": "landscape",
     "background_color": "#05050a",
     "theme_color": "#05050a",
+    "categories": ["games", "music"],
     "icons": [
         {
             "src": "sf_hero.png",
